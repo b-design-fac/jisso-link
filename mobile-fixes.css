@@ -1,0 +1,6 @@
+html,body{overflow-x:hidden}
+@media(max-width:800px){
+  .status{display:none}
+  .hero-visual img{width:112%}
+  .build-tag{right:10px}
+}
