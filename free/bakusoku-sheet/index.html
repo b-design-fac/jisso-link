@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="思いつきを今日カタチにする、JISSO.爆速実装シート。">
+  <title>爆速実装シート｜JISSO.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>.finish-now{display:block;width:100%;margin-top:18px;background:#10110f;color:#fff;padding:20px}.finish-now+.next{background:transparent;border-bottom:1px solid #10110f;padding-left:0;padding-right:0}</style>
+</head>
+<body>
+  <header><a href="../../">JISSO<span>.</span></a><div><i></i>FREE TOOL</div></header>
+  <main>
+    <section class="intro">
+      <p>JISSO.TOOL / 001</p>
+      <h1>思いつきを、<br><span>今日カタチ</span>にする。</h1>
+      <div class="intro-foot"><p>考えるためのシートではなく、<br>今日、完成させるためのシート。</p><b>SCROLL ↓</b></div>
+    </section>
+
+    <section class="workspace">
+      <aside>
+        <div class="progress-head"><span>PROGRESS</span><strong id="percent">0%</strong></div>
+        <div class="bar"><i id="bar"></i></div>
+        <ol id="nav">
+          <li class="active" data-step="0"><b>01</b>思いつき</li>
+          <li data-step="1"><b>02</b>完成条件</li>
+          <li data-step="2"><b>03</b>4つの工程</li>
+          <li data-step="3"><b>04</b>制限時間</li>
+          <li data-step="4"><b>05</b>制作記録</li>
+          <li data-step="5"><b>06</b>完成</li>
+        </ol>
+        <button id="reset" class="ghost">最初からやり直す</button>
+      </aside>
+
+      <div class="steps">
+        <article class="step active" data-panel="0">
+          <span class="number">01 / IDEA</span><h2>何を、作る？</h2>
+          <p>説明ではなく、完成する「もの」を1行で書きます。</p>
+          <label>今日カタチにする思いつき<textarea id="idea" placeholder="例：制作内容から投稿一式を作るWebツール"></textarea></label>
+          <button class="next">完成条件を決める →</button>
+        </article>
+        <article class="step" data-panel="1">
+          <span class="number">02 / DEFINITION OF DONE</span><h2>どこまでで、完成？</h2>
+          <p>今日やらないことを決めると、完成が近づきます。</p>
+          <label>完成の条件<textarea id="done" placeholder="例：入力・保存・出力がブラウザで動く"></textarea></label>
+          <label>今日はやらないこと<input id="notDoing" placeholder="例：会員登録、決済機能"></label>
+          <button class="next">工程に分ける →</button>
+        </article>
+        <article class="step" data-panel="2">
+          <span class="number">03 / BUILD STEPS</span><h2>4工程に、分ける。</h2>
+          <p>大きな作業を、今すぐ動ける4つにします。</p>
+          <div class="four"><label><b>01</b><input id="task1" placeholder="最初にやること"></label><label><b>02</b><input id="task2" placeholder="次にやること"></label><label><b>03</b><input id="task3" placeholder="形にすること"></label><label><b>04</b><input id="task4" placeholder="公開・確認すること"></label></div>
+          <button class="next">時間を決める →</button>
+        </article>
+        <article class="step" data-panel="3">
+          <span class="number">04 / TIMEBOX</span><h2>時間を、区切る。</h2>
+          <p>完成度ではなく、終了時刻を先に決めます。</p>
+          <div class="time-select"><button data-min="25">25分</button><button data-min="45" class="selected">45分</button><button data-min="60">60分</button><button data-min="90">90分</button></div>
+          <div class="timer"><strong id="timer">45:00</strong><span id="timerStatus">READY</span></div>
+          <div class="timer-actions"><button id="start">START</button><button id="pause" class="ghost">PAUSE</button><button id="timerReset" class="ghost">RESET</button></div>
+          <button id="finishNow" class="finish-now">時間を待たず、いまの状態で完成にする →</button>
+          <button class="next">制作記録を残してから完成する →</button>
+        </article>
+        <article class="step" data-panel="4">
+          <span class="number">05 / BUILD LOG</span><h2>止まった理由を、残す。</h2>
+          <p>失敗も制作記録。次の実装を速くする材料になります。</p>
+          <label>途中で起きたこと<textarea id="problem" placeholder="例：画像だけ表示されなかった"></textarea></label>
+          <label>どう解決した？<textarea id="solution" placeholder="例：ファイル構成を確認して再アップロードした"></textarea></label>
+          <button class="next">完成させる →</button>
+        </article>
+        <article class="step finish" data-panel="5">
+          <span class="number">06 / COMPLETED</span><h2>完成しました。</h2>
+          <p>今日作ったものを、完成形として記録します。</p>
+          <label>完成したもの<textarea id="completed" placeholder="完成したものを一文で"></textarea></label>
+          <label>次の実装<input id="nextBuild" placeholder="次に作るもの"></label>
+          <div class="complete-actions"><button id="complete">完成にする</button><button id="copy" class="ghost">完成記録をコピー</button><button id="print" class="ghost">PDF保存／印刷</button></div>
+          <div id="celebrate"><small>STATUS</small><strong>COMPLETED.</strong><p>思いつきを、今日カタチに。</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer><b>JISSO<span>.</span></b><p>完成して初めて、価値になる。</p></footer>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
