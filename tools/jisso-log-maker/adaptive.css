@@ -1,0 +1,12 @@
+.slide.dense-1 h3{font-size:clamp(18px,2.5vw,40px)}
+.slide.dense-1 p{font-size:clamp(7px,.82vw,13px);margin-top:1.2em}
+.slide.dense-2 h3{font-size:clamp(16px,2.15vw,34px)}
+.slide.dense-2 p{font-size:clamp(7px,.72vw,11.5px);line-height:1.55;margin-top:1em}
+@media(max-width:950px){
+  .slide.dense-1 h3{font-size:4.2vw}.slide.dense-1 p{font-size:1.55vw}
+  .slide.dense-2 h3{font-size:3.7vw}.slide.dense-2 p{font-size:1.35vw}
+}
+@media(max-width:580px){
+  .slide.dense-1 h3{font-size:9.2vw}.slide.dense-1 p{font-size:3.4vw}
+  .slide.dense-2 h3{font-size:8vw}.slide.dense-2 p{font-size:3vw}
+}
