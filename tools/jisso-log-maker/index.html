@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JISSO.LOG MAKER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div><span class="brand-dot"></span><b>JISSO.LOG MAKER</b></div>
+    <p>思いつきを、投稿できるカタチに。</p>
+  </header>
+
+  <main>
+    <section class="panel editor">
+      <div class="section-head"><span>01</span><h1>今日の実装を入力</h1></div>
+      <div class="grid two">
+        <label>LOG番号<input id="logNumber" type="number" min="1" value="4"></label>
+        <label>完成日<input id="date" type="date"></label>
+      </div>
+      <label>完成したもの<input id="title" value="JISSO.LOG制作システム"></label>
+      <label>ひとことで<input id="summary" value="投稿制作を、毎回ゼロから考えない仕組みを完成させた。"></label>
+      <label>作ろうと思った理由<textarea id="reason">制作内容を入力するだけで、InstagramとThreadsと画像6枚をまとめて作れるようにしたい。</textarea></label>
+      <div class="grid two">
+        <label>工程1<input id="step1" value="制作内容を入力"></label>
+        <label>工程2<input id="step2" value="投稿文を自動生成"></label>
+        <label>工程3<input id="step3" value="画像6枚を生成"></label>
+        <label>工程4<input id="step4" value="PNGで保存"></label>
+      </div>
+      <label>途中で起きた問題<textarea id="problem">投稿ごとに文章と画像を別々に作ると、時間がかかり、トーンも揃いにくい。</textarea></label>
+      <label>どう解決したか<textarea id="solution">入力項目を固定し、JISSO.LOGの構成・色・文章をひとつの画面で生成できるようにした。</textarea></label>
+      <label>完成内容<textarea id="result">Instagramキャプション、Threads投稿、画像6枚を一度に作れるJISSO.LOG MAKERが完成。</textarea></label>
+      <label>次に実装すること<input id="next" value="実際の制作で使いながら改善する"></label>
+      <div class="actions">
+        <button id="generate" class="primary">内容を更新</button>
+        <button id="sample" class="secondary">入力例に戻す</button>
+      </div>
+    </section>
+
+    <section class="panel output">
+      <div class="section-head"><span>02</span><h2>6枚の投稿画像</h2></div>
+      <div id="slides" class="slides"></div>
+      <div class="actions sticky-actions">
+        <button id="downloadAll" class="primary">PNGを6枚ダウンロード</button>
+      </div>
+    </section>
+
+    <section class="panel copy-panel">
+      <div class="section-head"><span>03</span><h2>投稿文</h2></div>
+      <div class="copy-grid">
+        <article><div class="copy-head"><h3>Instagram</h3><button data-copy="instagram">コピー</button></div><textarea id="instagram" readonly></textarea></article>
+        <article><div class="copy-head"><h3>Threads</h3><button data-copy="threads">コピー</button></div><textarea id="threads" readonly></textarea></article>
+      </div>
+    </section>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
