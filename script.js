@@ -6,6 +6,11 @@ if(linkList){
   works.href='works/';
   works.innerHTML='<span class="index">WORKS</span><span class="title">JISSO.WORKS<small>完成した制作物を見る</small></span><span class="arrow">→</span>';
   linkList.prepend(works);
+  const lab=document.createElement('a');
+  lab.className='link-card featured';
+  lab.href='lab/idea-maker/';
+  lab.innerHTML='<span class="index">LAB 001</span><span class="title">今日の実装テーマメーカー<small>30分で作るテーマを決める</small></span><span class="arrow">→</span>';
+  works.after(lab);
 }
 document.querySelectorAll("[data-link]").forEach(el=>{
   const key=el.dataset.link,url=cfg[key];
