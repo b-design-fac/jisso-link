@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="今日完成させるWeb制作テーマを決めるJISSO.LABの無料ツール。">
+  <title>今日の実装テーマメーカー｜JISSO.LAB</title>
+  <link rel="icon" href="../../assets/jisso-icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../">JISSO<span>.</span></a>
+    <div class="lab-status"><i></i>JISSO.LAB / 001</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">30 MIN BUILD EXPERIMENT</p>
+        <h1>今日、何を<br><span>実装る？</span></h1>
+        <p class="lead">考える時間を、作る時間に。<br>今日中に完成できる実装テーマを決めます。</p>
+      </div>
+
+      <div class="machine" id="machine">
+        <div class="machine-top"><span>BUILD THEME</span><span id="state">READY</span></div>
+        <div class="result" id="result" aria-live="polite">
+          <div class="empty" id="empty">
+            <strong>?</strong>
+            <p>ボタンを押して<br>今日の実装を決める。</p>
+          </div>
+          <div class="theme" id="theme" hidden>
+            <p class="category" id="category">WEB TOOL</p>
+            <h2 id="idea"></h2>
+            <dl>
+              <div><dt>FOR</dt><dd id="audience"></dd></div>
+              <div><dt>DONE WHEN</dt><dd id="condition"></dd></div>
+              <div><dt>TIMEBOX</dt><dd><b id="minutes"></b> MIN</dd></div>
+            </dl>
+          </div>
+        </div>
+        <button class="generate" id="generate"><span>テーマを生成する</span><b>→</b></button>
+        <div class="actions" id="actions" hidden>
+          <button id="copy">コピー</button>
+          <button id="again">もう一度</button>
+          <a id="build" href="#">このテーマで実装する <b>→</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="section-title"><p>HOW IT WORKS</p><h2>決めたら、作る。</h2></div>
+      <ol>
+        <li><span>01</span><strong>GENERATE</strong><p>今日作るテーマを決める。</p></li>
+        <li><span>02</span><strong>BUILD</strong><p>制限時間を決めて実装する。</p></li>
+        <li><span>03</span><strong>COMPLETE</strong><p>完成したものを記録する。</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><strong>JISSO<span>.</span></strong><p>思いつきを、今日カタチに。</p></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
