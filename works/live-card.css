@@ -1,0 +1,5 @@
+.visual-live{background:var(--ink)}
+.live-card{width:82%;height:62%;border:1px solid #ffffff32;padding:35px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.live-card small{font-size:10px;font-weight:900;letter-spacing:.15em;color:#8e918a}
+.live-card strong{font-size:clamp(45px,7vw,90px);letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.live-card i{font-style:normal;color:var(--lime);font-size:12px;font-weight:900;letter-spacing:.13em}
